@@ -1,53 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="w-full h-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/dist/output.css" />
     <title>Image Slider</title>
   </head>
-  <body>
-    <main class="">
-      <div class="slider-container flex">
-        <div class="slide w-full">
-          <img src="images/pexels-elevate-1267317.jpg" alt="" class="" />
-        </div>
-        <div class="slide w-full">
-          <img src="images/pexels-josh-sorenson-976863.jpg" alt="" class="" />
-        </div>
-        <div class="slide w-full">
-          <img src="images/pexels-mali-maeder-219101.jpg" alt="" class="" />
-        </div>
-        <div class="slide w-full">
-          <img src="images/pexels-pixabay-210922.jpg" alt="" class="" />
-        </div>
-        <div class="slide w-full">
-          <img src="images/pexels-wendy-wei-2183361.jpg" alt="" class="" />
-        </div>
-        <div class="slide w-full">
-          <img src="images/pexels-wendy-wei-2513605.jpg" alt="" class="" />
+  <body class="h-full w-full">
+    <main class="h-full w-full">
+      <div class="w-full h-5/6">
+        <div id="img-container" class="relative w-full h-full flex">
+          <img
+            src="images/pexels-elevate-1267317.jpg"
+            alt=""
+            class="absolute translate-x-0 w-full h-full flex-none"
+          />
+          <img
+            src="images/pexels-josh-sorenson-976863.jpg"
+            alt=""
+            class="absolute translate-x-full w-full h-full flex-none"
+          />
+          <img
+            src="images/pexels-mali-maeder-219101.jpg"
+            alt=""
+            class="absolute translate-x-full w-full h-full flex-none"
+          />
+          <img
+            src="images/pexels-pixabay-210922.jpg"
+            alt=""
+            class="absolute translate-x-full w-full h-full flex-none"
+          />
+          <img
+            src="images/pexels-wendy-wei-2183361.jpg"
+            alt=""
+            class="absolute translate-x-full w-full h-full flex-none"
+          />
+          <img
+            src="images/pexels-wendy-wei-2513605.jpg"
+            alt=""
+            class="absolute translate-x-full w-full h-full flex-none"
+          />
         </div>
       </div>
       <button
+        id="prev-button"
         class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
       >
         prev
       </button>
       <button
+        id="next-button"
         class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
       >
         next
       </button>
 
-      <div
-        class="dots-containers absolute z-30 flex space-x-3 -translate-x-1/2 left-1/2"
-      >
-        <button class="w-3 h-3 rounded-full bg-slate-800"></button>
-        <button class="w-3 h-3 rounded-full bg-slate-800"></button>
-        <button class="w-3 h-3 rounded-full bg-slate-800"></button>
-        <button class="w-3 h-3 rounded-full bg-slate-800"></button>
-        <button class="w-3 h-3 rounded-full bg-slate-800"></button>
-        <button class="w-3 h-3 rounded-full bg-slate-800"></button>
+      <div class="absolute z-30 flex space-x-3 -translate-x-1/2 left-1/2">
+        <button class="dots w-3 h-3 rounded-full bg-slate-800"></button>
+        <button class="dots w-3 h-3 rounded-full bg-slate-800"></button>
+        <button class="dots w-3 h-3 rounded-full bg-slate-800"></button>
+        <button class="dots w-3 h-3 rounded-full bg-slate-800"></button>
+        <button class="dots w-3 h-3 rounded-full bg-slate-800"></button>
+        <button class="dots w-3 h-3 rounded-full bg-slate-800"></button>
       </div>
     </main>
     <script src="app.js"></script>
