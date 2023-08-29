@@ -3,6 +3,7 @@ init();
 function init() {
   const prevButton = document.querySelector("#prev-button");
   const nextButton = document.querySelector("#next-button");
+  const dots = document.querySelectorAll(".dot");
 
   prevButton.addEventListener("click", () => {
     previousImg();
@@ -10,6 +11,12 @@ function init() {
 
   nextButton.addEventListener("click", () => {
     nextImg();
+  });
+
+  dots.forEach((dot) => {
+    dot.addEventListener("click", () => {
+      goToImage(dot.dataset.index);
+    });
   });
 }
 
@@ -52,7 +59,6 @@ function firstImg() {
   }
 
   const firstImg = imgContainer.firstElementChild;
-  console.log({ firstImg });
 
   firstImg.classList.remove("translate-x-full");
   firstImg.classList.add("translate-x-0");
@@ -70,4 +76,30 @@ function lastImg() {
 
   lastImg.classList.remove("-translate-x-full");
   lastImg.classList.add("translate-x-0");
+}
+
+function goToImage(index) {
+  const imgContainer = document.querySelector("#img-container");
+
+  const prevImages = [];
+  let currentImg;
+  const nextImages = [];
+
+  for (const img of imgContainer.children) {
+    img.classList.remove(
+      "translate-x-0",
+      "translate-x-full",
+      "-translate-x-full"
+    );
+
+    if (img.dataset.index < index) prevImages.push(img);
+    if (img.dataset.index === index) currentImg = img;
+    if (img.dataset.index > index) nextImages.push(img);
+  }
+
+  for (const img of prevImages) img.classList.add("translate-x-full");
+
+  for (const img of nextImages) img.classList.add("-translate-x-full");
+
+  currentImg.classList.add("translate-x-0");
 }
